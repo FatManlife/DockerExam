@@ -6,12 +6,12 @@ export async function getCourses() {
 }
 
 export async function getCourse(id) {
-    const res = await api.get($`/courses/${id}`);
+    const res = await api.get(`/courses/${id}`);
     return res.data
 }
 
 export async function deleteCourse(id) {
-    const res = await api.delete($`/courses/${id}`);
+    const res = await api.delete(`/courses/${id}`);
     return res.data
 }
 

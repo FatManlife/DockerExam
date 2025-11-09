@@ -24,6 +24,9 @@ const App = () => {
     fetch();
   }, [])
 
+
+  console.log(courses);
+
   return (
     <div className="min-h-screen bg-gray-100 p-6">
       <div className="flex justify-between items-center mb-6">
@@ -40,7 +43,7 @@ const App = () => {
       {error && <p className="text-red-500">{error}</p>}
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {courses.map((c) => (
+        {courses.length != 0 && courses.map((c) => (
           <div key={c.id} className="bg-white p-4 rounded-xl shadow hover:shadow-md transition">
             <p className="text-sm text-blue-500 font-medium">{c.category}</p>
             <h2 className="text-lg font-semibold mt-1">{c.name}</h2>
