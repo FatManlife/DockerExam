@@ -15,7 +15,6 @@ export async function deleteCourse(id) {
     return res.data
 }
 
-export async function createCourse(id) {
-    const res = await api.get($`/courses/${id}`);
-    return res.data
+export async function createCourse(data) {
+    await api.post("/courses", data);
 }
