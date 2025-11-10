@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: react-app
+  template:
+    metadata:
+      labels:
+        app: react-app
+    spec:
+      containers:
+        - name: react-app
+          image: daeu/react-app:1.3
+          ports:
+            - containerPort: 3000
+          env:
+            - name: VITE_API_URL
+           #trebuie de schimbat de fiecare data in dependenta de localhost: la backend
+              value: "http://127.0.0.1:46233"
+

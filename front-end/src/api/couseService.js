@@ -1,7 +1,7 @@
 import api from "./axios";
 
 export async function getCourses() {
-    const res = await api.get("/courses");
+    const res = await api.get("/courses/");
     return res.data
 }
 
@@ -16,5 +16,5 @@ export async function deleteCourse(id) {
 }
 
 export async function createCourse(data) {
-    await api.post("/courses", data);
+    await api.post("/courses/", data);
 }

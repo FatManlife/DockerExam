@@ -16,7 +16,7 @@ const App = () => {
         setCourses(data);
       } catch (erorr) {
         console.error(erorr);
-        setError(erorr);
+        setError(erorr.message);
       } finally {
         setLoading(false);
       }
